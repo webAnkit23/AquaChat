@@ -11,7 +11,7 @@ export const SocketProvider = ({children}) =>{
    const {user} = useGlobal();
  useEffect(() =>{
        if(user==null)return;
-       socket.current = io('http://localhost:8000');
+       socket.current = io('/');
 
        socket.current.on('connect' ,() =>{
            console.log('connected');
