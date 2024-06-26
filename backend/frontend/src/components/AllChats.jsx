@@ -46,7 +46,7 @@ export default function AllChats() {
   fetchChats();
   },[user]);
   return (
-    <div className='overflow-y-auto h-[90vh] border-r-2'>
+    <div className='overflow-y-auto border-r-2'>
         <div className='flex items-center gap-2 p-3 border-b-2'>
             <img src={message} className='h-[50px] rounded-full w-[50px] object-cover'/>
             <h1 className='text-3xl font-semibold textGra2'>My Chats</h1>
