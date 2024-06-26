@@ -5,10 +5,6 @@
   "main": "index.js",
   "scripts": {
     "start" : "node index.js",
-<<<<<<< HEAD
-=======
-    
->>>>>>> 6f57da7b194459a794c037d90eaf6af8d197620b
     "test": "echo \"Error: no test specified\" && exit 1",
     "build" : "cd frontend && npm install && npm run build && cd .. && npm install"
   },
