@@ -1,0 +1,282 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body{
+    margin: 0px;
+   overflow: hidden;
+}
+.center{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% ,-50%);
+}
+.h{
+  height:  -webkit-fill-available;
+}
+.myflex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bg{
+    background: #fc00ff;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #00dbde, #fc00ff);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #00dbde, #fc00ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.bg2{
+  background: #00C9FF;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #92FE9D, #00C9FF);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #92FE9D, #00C9FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+}
+.textGra{  
+   
+  background: #00C9FF;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #21da34, #1cb1da);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #1fcd30, #1c9fc4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+      
+}
+
+
+.textGra2{
+    background: #fc00ff;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #00dbde, #fc00ff);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #00dbde, #fc00ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+.x{
+    background-image: url('https://media.istockphoto.com/id/1277561237/vector/cartoon-raining-isolated-on-white-background.jpg?s=2048x2048&w=is&k=20&c=8FO2-jcil06XqEK5xQ3GlFzG_RSkunuKhyW8JRp4rL0=');
+}
+
+@media only screen and (max-width:505px){
+    .text{
+        font-size: 17px;
+    }
+    .hide{
+        display: none;
+    }
+}
+@keyframes rotate-reverse {
+    0% {
+      transform: rotate(360deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  .translate{
+       display: flex;
+  }
+  .translate-reverse{
+     display: none;
+  }
+  ::-webkit-scrollbar {
+    width: 5px; 
+    margin: 2px;/* width of the scrollbar */
+  }
+  
+  /* Track (the area on the sides of the scrollbar) */
+  ::-webkit-scrollbar-track {
+    background: #00dbde /* color of the track */
+  }
+  .bgWall{
+    position: relative;
+    z-index: 1;
+  }
+  .bgWall::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: url('https://cdn.openart.ai/stable_diffusion/962b2b6375fb8e9bba85f644019bf05e95f53249_2000x2000.webp') no-repeat center center;
+    background-size: cover;
+    opacity: .8;
+    z-index: -1;
+  }
+  
+  /* Handle (the draggable part of the scrollbar) */
+  ::-webkit-scrollbar-thumb {
+   /* color of the handle */
+   background: #fc00ff;  /* fallback for old browsers */
+   background: -webkit-linear-gradient(to bottom, #00dbde, #fc00ff);  /* Chrome 10-25, Safari 5.1-6 */
+   background: linear-gradient(to bottom, #00dbde, #fc00ff); 
+    border-radius: 5px; /* roundness of the handle */
+    
+  }
+  .hoverEffect{
+    transition: all .3s;
+  }
+  .hoverEffect:hover{
+    background: #fc00ff;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #00dbde, #fc00ff);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #00dbde, #fc00ff);
+  }
+  .wave{
+    background-image: url('./utils//wave.jpg');
+    background-size: cover;
+  }
+
+  .bgGradient{
+    background-color: #D9AFD9;
+background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
+
+  }
+    .loader {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: inline-block;
+      border-top: 4px solid #00dbde;
+      border-right: 4px solid transparent;
+      box-sizing: border-box;
+      animation: rotation 1s linear infinite;
+    }
+    .loader::after {
+      content: '';  
+      box-sizing: border-box;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border-left: 4px solid #fc00ff;
+      border-bottom: 4px solid transparent;
+      animation: rotation 0.5s linear infinite reverse;
+    }
+    @keyframes rotation {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    } 
+    .gray{
+      background: gray;
+    }
+
+  .loader2, .loader2:before, .loader2:after {
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  animation-fill-mode: both;
+  animation: bblFadInOut 1.8s infinite ease-in-out;
+}
+.loader2 {
+  color: white;
+  font-size: 7px;
+  position: relative;
+  text-indent: -9999em;
+  transform: translateZ(0);
+  animation-delay: -0.16s;
+  top: -17px;
+}
+.loader2:before,
+.loader2:after {
+  content: '';
+  position: absolute;
+  top: 0px;
+ 
+}
+
+.loader2:before {
+  left: -3.5em;
+  animation-delay: -0.32s;
+
+}
+.loader2:after {
+  left: 3.5em;
+
+}
+
+@keyframes bblFadInOut {
+  0%, 80%, 100% { box-shadow: 0 2.5em 0 -1.3em }
+  40% { box-shadow: 0 2.5em 0 0 }
+}
+   .typingLoader{
+  
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: block;
+      margin:15px auto;
+      position: relative;
+      color: #FFF;
+      box-sizing: border-box;
+      animation: animloader 1s linear infinite alternate;
+    }
+    
+    @keyframes animloader {
+      0% {
+        box-shadow: -38px -12px ,  -14px 0,  14px 0, 38px 0;
+        color: black;
+      }
+      33% {
+        box-shadow: -38px 0px, -14px -12px,  14px 0, 38px 0;
+        color: white
+      }
+      66% {
+        box-shadow: -38px 0px , -14px 0, 14px -12px, 38px 0;
+        color: black
+      }
+      100% {
+        box-shadow: -38px 0 , -14px 0, 14px 0 , 38px -12px;
+        color: wheat;
+      }
+    }
+    .loader4{
+    
+        width: 8px;
+        height: 20px;
+        border-radius: 4px;
+        display: block;
+        margin: 20px auto;
+        position: relative;
+        background: currentColor;
+        color: #FFF;
+        box-sizing: border-box;
+        animation: animloader 0.3s 0.3s linear infinite alternate;
+      }
+      
+      .loader4::after, .loader4::before {
+        content: '';
+        width: 8px;
+        height: 20px;
+        border-radius: 4px;
+        background: currentColor;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 20px;
+        box-sizing: border-box;
+        animation: animloader 0.3s  0.45s  linear infinite alternate;
+      }
+      .loader4::before {
+        left: -20px;
+        animation-delay: 0s;
+      }
+      
+      @keyframes animloader {
+        0%   { height: 20px} 
+        100% { height: 4px}
+      }
+    
+
+      .display{
+        display: none;
+      }
+      @media only screen and (min-width:863px){
+        .display{
+          display: block;
+        }
+      }
+   
+          
+  
