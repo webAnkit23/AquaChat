@@ -96,7 +96,7 @@ export default function GroupModal({setShowGroupModal}) {
         ReactDOM.createPortal(
            <>
            <div className='h-[100vh] fixed w-[100vw] bg-gray-300 top-0 z-100 opacity-[.5]' onClick={()=> setShowGroupModal(false)}></div>
-           <div className='absolute top-[50%] left-[50%] translate-x-[-50%] z-[1000] bg-white translate-y-[-50%] h-auto  w-[300px] border-2 shadow-lg '>
+           <div className='absolute top-[50%] left-[50%] translate-x-[-50%] z-[10000] opacity-1 bg-white translate-y-[-50%] h-auto  w-[300px] border-2 shadow-lg '>
                <div className='flex items-center justify-between p-2 border-b-2 '>
                 <h1 className='text-xl font-semibold textGra2'>Add to Group + </h1>
                 <GiCrossMark onClick={() =>{
