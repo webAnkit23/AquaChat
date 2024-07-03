@@ -32,7 +32,8 @@ const [openModal , setOpenModal ] = useState(false);
             <h1 className='text-lg '>{chat.isGroup?chat.chatName:getSender()?.name}</h1>
             <p className={`overflow-hidden font-semibold ${selectedChat?._id===chat._id?'text-white ':''} text-nowrap`}>
               <span className='text-green-800'>
-              {chat?.newMessage&&chat?.newMessage?.sentBy._id==user.id?'You : ' :`${chat?.newMessage?.sentBy.name} : `}
+            
+              {chat?.newMessage?chat?.newMessage?.sentBy?._id==user.id?'You : ' :`${chat?.newMessage?.sentBy?.name} : ` : ""}
               </span>
               <span>
 
