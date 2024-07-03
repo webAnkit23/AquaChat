@@ -16,20 +16,21 @@ export default function SideBar({showSideBar,setShowSideBar}) {
 },[]);
 const handleCreateChat =async(id) =>{
   if(chats!=null){
-    const existingChat = chats.find((c) =>{
-      if(c.isGroupChat)return false;
-          return c.members[0]._id==id||c.members[1]._id==id;
+    const existingChat = chats.filter((c) =>{
+      console.log(id);
+      if(c.isGroup)return false;
+      if(c.members[0]._id==id||c.members[1]._id==id)return true;
+      return false;
     });
-   if(existingChat){
-    setSelectedChat(existingChat);
+  
+    console.log(existingChat);
+   if(existingChat.length>=1){
+    setSelectedChat(existingChat[0]);
     setResults([]);
     setShowSideBar(false);
     return;
-   }
-    
+   }  
   }
-
- console.log(id);
     try{
       const config = {
         headers: {
@@ -59,7 +60,7 @@ const handleCreateChat =async(id) =>{
               }
             });
             setResults(data);
-            console.log(data);
+            
      }
      catch(err){
         toast.error(err.message);

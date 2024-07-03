@@ -10,7 +10,6 @@ export const ContextProvider =({children}) =>{
     const [chats ,setChats] = useState(null);
     const [selectedChat , setSelectedChat] = useState(null);
     const [notifications ,setNotifications] = useState(new Map());
-
     return <globalContext.Provider value={{user ,setUser,chats ,notifications ,setNotifications ,setChats,selectedChat , setSelectedChat}}>
         {children}
     </globalContext.Provider>

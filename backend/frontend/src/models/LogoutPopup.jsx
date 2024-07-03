@@ -22,7 +22,7 @@ export default function LogoutPopup({setshowPopUp,setShowGroupModal}) {
     setshowPopUp(false);
   }
   return (
-    <div  className='absolute left-[-120px] width-[130px]  cursor-pointer  z-40 bg-white shadow-md'>
+    <div  className='absolute left-[-120px] w-[130px]  cursor-pointer  z-40 bg-white shadow-md'>
 
       <div className='flex items-center justify-center gap-3 pt-2 pb-2 font-semibold border-b-2 hoverEffect'>
               <FaRegUserCircle size={20} color='#fc00ff'/>
