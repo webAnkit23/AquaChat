@@ -6,7 +6,7 @@ import EditGroupModal from './EditGroupModal.jsx';
 export default function ChatpopUp({setShowPopUp,selectedChat}) {
   const [showGroupModal , setShowGroupModal] = useState(-1);
   return (
-    <div className='absolute w-[max-content] bg-white border-2 rounded shadow-sm  right-4'>
+    <div className='absolute z-[10000] w-[max-content] bg-white border-2 rounded shadow-sm  right-4'>
 
         <div onClick={() =>setShowGroupModal(0)} className='flex items-center p-2 text-center border-b-2 cursor-pointer hover:bg-gray-200 text-nowrap'>
             <img className='h-[30px] w-[30px]  rounded-full' src={admin}/>

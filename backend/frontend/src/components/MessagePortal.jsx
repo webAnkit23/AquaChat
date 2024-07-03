@@ -233,7 +233,7 @@ function Header({selectedChat ,istyping}){
     return user.id===selectedChat.members[0]._id?selectedChat.members[1]:selectedChat.members[0];
 }
   return(
-    <div className='shadow-lg z-[1] select-none  h-[75px] flex  p-3 items-center '>
+    <div className='shadow-lg z-10 select-none  h-[75px] flex  p-3 items-center '>
        <div className='flex items-start gap-4'>
       <div className='flex items-center h-[60px] justify-center md:hidden' onClick={() => setSelectedChat(null)}>
        <img className='h-[40px] w-[40px]' src={arrow}/>
