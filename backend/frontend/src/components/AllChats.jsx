@@ -58,7 +58,7 @@ export default function AllChats() {
             <SideBarLoader />
             <SideBarLoader />
             </div> : chats ? chats.length>0? chats.map((chat) =>{
-                   return <Chat key={chat?._id } hasNotification = {notifications.has(chat._id)} chat ={chat}/>
+                   return <Chat key={chat?._id } hasNotification = {notifications?.has(chat._id)} chat ={chat}/>
 
             }):<></> : <></> }
 

@@ -29,13 +29,13 @@ const socket = useSocket();
             let map = new Map(prev);
             map.set(data.chatID._id , data);
             console.log(map);
-            return map;
+            return new Map(map);
           });
        }         
     }
    )
    return ()=>{
-    socket.off("new Notification");
+   
    }
   }
 },[socket,selectedChat]);
@@ -101,7 +101,7 @@ const [messages ,setMessages] = useState([]);
           setNotifications(prev =>{
              let map = new Map(prev);
              map.set(incomingMessage.chatID._id , incomingMessage);
-            return map;
+            return new Map(map);
         });
        }
      else{
