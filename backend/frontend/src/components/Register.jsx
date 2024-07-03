@@ -16,14 +16,15 @@ export default function Register({setOpenLogin}) {
   const navigate = useNavigate();
   const [showPassword ,setShowPassword] = useState(false);
   const [email ,setEmail] = useState('');
+  const [loading ,setLoading] = useState(false);
   const [password,setPassword] = useState('');
   const [name ,setName] = useState('');
   const ref = useRef();
   const [imageUrl ,setImageUrl] = useState(null);
   const {setUser} = useGlobal();
-  console.log(imageUrl);
+
  async function handleImageUpload(e){
-    console.log('a');
+   
     let i = e.target.files[0];
     
     const formData = new FormData();
@@ -31,28 +32,31 @@ export default function Register({setOpenLogin}) {
     formData.append('upload_preset', 'puioiycd'); // Replace with your upload preset
 
     try {
+      setLoading(true);
       const {data} = await axios.post(
         `https://api.cloudinary.com/v1_1/dcoekuoxi/image/upload`, // Replace with your cloud name
         formData
        );
-     console.log(data);
+   
       setImageUrl(data.secure_url);
     }
-
     catch (error) {
-      console.error("Error uploading image:", error);
+        toast.error("Error uploading image:", error);
+    }
+    finally{
+      setLoading(false);
     }
   }
 
   const handleRegister =async () =>{
-    console.log('a');
+    
     const res =  checkinputs(email,name,password , toast);
     if(res){
       try{
         const {data} = await axios.post('/api/register' , {name ,email ,password , profilepic:imageUrl||'https://wallpapers-clan.com/wp-content/uploads/2022/09/one-piece-pfp-1.jpg'});
         localStorage.setItem("AquaUser" , JSON.stringify(data));
           setUser(data);
-        console.log(data);
+       
         toast.success('you are Signed up');
         navigate('/chats');
       }
@@ -109,7 +113,7 @@ export default function Register({setOpenLogin}) {
                  
                 </div>  
            
-           <button onClick={handleRegister} className='w-[100%] rounded-full mt-5 text-xl text-white hover:scale-[1.01] duration-100 hover:shadow-sm bg h-[40px]'>Sign up</button>
+           <button onClick={handleRegister} disabled ={loading} className={`w-[100%] ${loading?'opacity-45':''} rounded-full mt-5 text-xl text-white hover:scale-[1.01] duration-100 hover:shadow-sm bg h-[40px]`}>{loading ? 'Uploading': 'Sign up'}</button>
       </div>
         <div className='text-sm text-center mt-7'>
           <p>

@@ -4,7 +4,7 @@ import group from './../utils/group.png'
 import { GiCrossMark } from 'react-icons/gi';
 import admin from './../utils/protection.png'
 export default function GroupInfoModal({setShowGroupModal,selectedChat}) {
-  console.log(selectedChat);
+ 
   return (
     ReactDOM.createPortal(
         <>

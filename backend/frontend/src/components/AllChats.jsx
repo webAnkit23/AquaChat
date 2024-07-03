@@ -15,7 +15,7 @@ export default function AllChats() {
   useEffect(() =>{
      if(socket){
       socket.on('onlineUsers', (users) => {
-        console.log(users);
+        
       });
      }
   },[socket,user]);
@@ -35,7 +35,7 @@ export default function AllChats() {
         setChats(data);
     }
      catch(err){
-      console.log(err);
+      
            toast.error(err.response.data.message);
       }
      finally{

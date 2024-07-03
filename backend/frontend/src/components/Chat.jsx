@@ -5,7 +5,7 @@ import ImageModal from '../models/ImageModal';
 export default function Chat({chat,hasNotification}) {
   const { user,setSelectedChat,selectedChat,notifications ,setNotifications} = useGlobal();
 const [openModal , setOpenModal ] = useState(false);
-console.log(hasNotification,notifications);
+
  const getSender =useCallback(() =>{
        return user.id==chat.members[0]._id?chat.members[1]:chat.members[0];
  },[chat ,user]) ;

@@ -26,7 +26,6 @@ export default function Login({setOpenLogin}) {
                 navigate('/chats');
           }
           catch(err){
-            console.log(err.response.data);
             toast.error(err.response.data.message);
           }
          }

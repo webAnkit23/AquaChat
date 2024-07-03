@@ -28,7 +28,7 @@ const socket = useSocket();
           setNotifications(prev =>{
             let map = new Map(prev);
             map.set(data.chatID._id , data);
-            console.log(map);
+          
             return new Map(map);
           });
        }         

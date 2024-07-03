@@ -63,7 +63,7 @@ export default function EditGroupModal({setShowGroupModal,selectedChat}) {
     const updateGroup =async() =>{
          let newMembers =[];
          let deletedMembers =[];
-        console.log('a');
+       
          selectedChat.members.forEach((m) =>{
           if(!members.has(m._id)&&selectedChat.admin._id!==m._id){
                   deletedMembers.push(m);
@@ -75,7 +75,7 @@ export default function EditGroupModal({setShowGroupModal,selectedChat}) {
          
          try{
           const data =  await Promise.all([addMembers(newMembers,selectedChat._id,user.token ) , removeMembers(deletedMembers,selectedChat._id,user.token) ,renameGroup(name , selectedChat._id,user.token)]);
-          console.log(data);
+       
  
           setSelectedChat(data[2]||data[1]||data[0]||null);
              if(selectedChat!=null){
